@@ -1,0 +1,26 @@
+---
+title: ''
+output: html_document
+params:
+  foo: NA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+params$foo
+```
+
+## Report Summary
+
+This report was dynamically generated using the `shinyReports` package. 
+
+### User Input
+
+The parameter passed from the Shiny application is: **`r params$foo`**.
+
+### Analysis Output
+
+```{r chunk}
+# passed variable in R code chunk
+selected_variable <- params$foo
+cat("The analytical workflow is currently configured to process variable:", selected_variable)
