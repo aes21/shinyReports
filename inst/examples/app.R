@@ -1,7 +1,7 @@
 library(shiny)
 library(shinyReports)
 
-ui <- fillPage(
+ui <- fluidPage(
   titlePanel("Report Generator"),
   selectInput("foo", "Select a variable", choices = c("A", "B", "C")),
   reportButton("knit_report", "Generate Report")

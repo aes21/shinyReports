@@ -24,3 +24,4 @@ The parameter passed from the Shiny application is: **`r params$foo`**.
 # passed variable in R code chunk
 selected_variable <- params$foo
 cat("The analytical workflow is currently configured to process variable:", selected_variable)
+```
