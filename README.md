@@ -22,4 +22,6 @@ library(shinyReports)
 shiny::runApp(system.file("examples", package = "shinyReports"))
 ```
 
+### Demo
+
 ![demo](assets/shinyReports_demo.gif)
