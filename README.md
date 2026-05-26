@@ -61,4 +61,4 @@ library(shinyReports)
 shiny::runApp(system.file("examples", package = "shinyReports"))
 ```
 
-![demo](assets/shinyReports_demo.gif)
+> ![demo](assets/shinyReports_demo.gif)
