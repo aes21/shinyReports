@@ -1,8 +1,8 @@
 # shinyReports
-> Simplifies automatic HTML report rendering from .Rmd files in [shiny](https://github.com/rstudio/shiny).
+> Render `.Rmd` reports directly in your browser from a [shiny](https://github.com/rstudio/shiny) application - no download required.
 
 ## Overview
-This package adapts the Shiny -> .Rmd report generation workflow to automatically push HTML content to the client and open a new browser tab.
+This package adapts the Shiny -> R Markdown report generation workflow to remove the need to download a file and open it manually. `shinyReports` provides UI and server-side elements to knit the `.Rmd` file and automatically push the HTML content to a new browser tab.
 
 ## Installation
 Install directly from GitHub with:
@@ -13,6 +13,8 @@ remotes::install_github("aes21/shinyReports")
 ```
 
 ## Usage
+
+### 1. Prepare the R Markdown file
 Ensure your R Markdown file sits within your app structure. The YAML heading of the R Markdown file must knit to a HTML document:
 
 ```rmd
@@ -24,6 +26,7 @@ params:
 ---
 ```
 
+### 2. Add the UI element
 The `reportButton()` function acts as a connection wrapper for `shiny::actionButton` to the report download in the UI.
 
 ```r
@@ -32,7 +35,8 @@ ui <- fluidPage(
 )
 ```
 
-The `renderReport()` function contains the server-side logic to compile a .Rmd file and load the HTML content to the client.
+### 3. Served-side logic
+The `renderReport()` function contains the server-side logic to compile a `.Rmd` file and load the HTML content to the client.
 
 ```r
 server <- function(input, output, session) {
@@ -45,6 +49,9 @@ server <- function(input, output, session) {
 }
 ```
 
+The `params` list is passed directly through to the `.Rmd` file, so you can populate reports with reactive values from your app.
+
+## Demo
 For an example `shinyReports` application, you can launch the demo application directly from your R console:
 
 ```r
@@ -54,6 +61,4 @@ library(shinyReports)
 shiny::runApp(system.file("examples", package = "shinyReports"))
 ```
 
-### Demo
-
-![demo](assets/shinyReports_demo.gif)
+> ![demo](assets/shinyReports_demo.gif)
