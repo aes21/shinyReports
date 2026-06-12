@@ -26,12 +26,21 @@ renderReport <- function(inputId, title = "Report", rmd_file, params = NULL, env
     temp_html <- tempfile(fileext = ".html")
 
     # render report
-    rmarkdown::render(
-      rmd_file,
-      output_file = temp_html,
-      params = param_list,
-      envir = envir,
-      quiet = TRUE
+    tryCatch(
+      rmarkdown::render(
+        rmd_file,
+        output_file = temp_html,
+        params = param_list,
+        envir = envir,
+        quiet = TRUE
+      ),
+      error = function(e) {
+        shiny::showNotification(
+          "ERROR: Unable to render the report",
+          type = "error"
+        )
+        NULL
+      }
     )
 
     if (file.exists(temp_html)) {
