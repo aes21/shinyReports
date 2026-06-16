@@ -23,5 +23,11 @@ The parameter passed from the Shiny application is: **`r params$foo`**.
 ```{r chunk}
 # passed variable in R code chunk
 selected_variable <- params$foo
-cat("The analytical workflow is currently configured to process variable:", selected_variable)
+
+if (selected_variable == "C") {
+  source("made_up_file.R")
+} else {
+  cat("Currently configured to process variable:", selected_variable)
+}
+
 ```

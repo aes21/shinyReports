@@ -1,6 +1,6 @@
 Package: shinyReports
 Title: R Markdown HTML Tab Rendering for Shiny
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person("Alexander", "Sadler", , "alexander@apexomic.com", role = c("aut", "cre"))
 Description: Simplifies automatic HTML report rendering from R Markdown reports in Shiny applications. Provides a UI element to trigger .Rmd rendering and displays the result in a new tab; opened automatically.
