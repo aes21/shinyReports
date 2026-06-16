@@ -36,7 +36,7 @@ renderReport <- function(inputId, title = "Report", rmd_file, params = NULL, env
         quiet = TRUE
       ),
       error = function(e) {
-        message(e)
+        message(conditionMessage(e), "\n")
         shiny::showNotification(
           "ERROR: Unable to render the report",
           type = "error"
