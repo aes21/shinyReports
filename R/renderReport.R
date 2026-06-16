@@ -32,6 +32,7 @@ renderReport <- function(inputId, title = "Report", rmd_file, params = NULL, env
         output_file = temp_html,
         params = param_list,
         envir = envir,
+        knit_root_dir = getwd(),
         quiet = TRUE
       ),
       error = function(e) {
