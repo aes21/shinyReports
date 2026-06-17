@@ -3,8 +3,7 @@ Title: R Markdown HTML Tab Rendering for Shiny
 Version: 1.0.1
 Authors@R: 
     person("Alexander", "Sadler", , "alexander@apexomic.com", role = c("aut", "cre"))
-Description: Simplifies automatic HTML report rendering from R Markdown reports in Shiny applications. Provides a UI element to trigger .Rmd rendering and displays the result in a new tab; opened automatically.
-License: MIT + file LICENSE
+Description: Render R Markdown reports to HTML and display them instantly in a new browser tab from within a Shiny application. Replaces file downloads with a seamless in-browser approach.
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
