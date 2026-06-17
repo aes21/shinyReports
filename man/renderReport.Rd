@@ -26,6 +26,18 @@ renderReport(
 \description{
 Server-side logic to compile .Rmd and send HTML to client.
 }
+\examples{
+\dontrun{
+server <- function(input, output, session) {
+   renderReport(
+     inputId = "knit_report",
+     title = "My Report",
+     rmd_file = "report.Rmd",
+     params = list(date = Sys.Date())
+   )
+}
+}
+}
 \seealso{
 \code{\link[=reportButton]{reportButton()}}
 }

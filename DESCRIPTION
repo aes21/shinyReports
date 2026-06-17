@@ -1,6 +1,6 @@
 Package: shinyReports
 Title: R Markdown HTML Tab Rendering for Shiny
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     person("Alexander", "Sadler", , "alexander@apexomic.com", role = c("aut", "cre"))
 Description: Render R Markdown reports to HTML and display them instantly in a new browser tab from within a Shiny application. Replaces file downloads with a seamless in-browser approach.
@@ -11,3 +11,6 @@ RoxygenNote: 7.3.3
 Imports: 
     rmarkdown,
     shiny
+Suggests: 
+    knitr
+VignetteBuilder: knitr

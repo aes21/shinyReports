@@ -19,6 +19,16 @@ you could also use any other HTML, like an image.}
 \description{
 Modifies \code{\link[shiny:actionButton]{shiny::actionButton()}} to generate and open an R Markdown report in a new window tab.
 }
+\examples{
+\dontrun{
+ui <- fluidPage(
+   reportButton(
+     inputId = "knit_report",
+     label = "Generate Report"
+   )
+)
+}
+}
 \seealso{
 \code{\link[=renderReport]{renderReport()}}
 }

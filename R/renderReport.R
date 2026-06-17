@@ -14,6 +14,18 @@
 #'
 #' @import shiny
 #' @importFrom rmarkdown render
+#'
+#' @examples
+#' \dontrun{
+#' server <- function(input, output, session) {
+#'    renderReport(
+#'      inputId = "knit_report",
+#'      title = "My Report",
+#'      rmd_file = "report.Rmd",
+#'      params = list(date = Sys.Date())
+#'    )
+#' }
+#' }
 renderReport <- function(inputId, title = "Report", rmd_file, params = NULL, envir = parent.frame()) {
   # listen to current session inputId
   session <- shiny::getDefaultReactiveDomain()

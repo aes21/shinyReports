@@ -1,0 +1,64 @@
+---
+title: "Getting Started with shinyReports"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with shinyReports}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+The `shinyReports` package provides a simple way to render R Markdown reports to HTML directly within a Shiny application, displaying the result in a new browser tab and eliminating the need for users to manually download and open report files.
+
+### Create the R Markdown template
+
+First, create your `.Rmd` file you want to render as a report. It must be accessible from the root directory of your application. Ensure that you output your report as a `html_document` within the YAML heading.
+
+An example `report.Rmd`:
+
+```yaml
+---
+title: "My Report"
+output: html_document
+params:
+  date: NA
+---
+```
+
+Parameters passed from the Shiny application via `renderReport()` (see below) are referenced using inline R expressions, such as `params$date`.
+
+```{r setup, eval=FALSE, include=FALSE}
+params$date
+```
+
+### Build your Shiny application
+
+Add the `reportButton()` (a `shiny::actionButton` download wrapper) and `renderReport` functions to your UI and server, respectively in `app.R`:
+
+```{r shiny, eval=FALSE}
+library(shiny)
+library(shinyReports)
+
+ui <- fluidPage(
+  reportButton("knit_report", label = "Generate Report")
+)
+
+server <- function(input, output, session) {
+  renderReport(
+    inputId = "knit_report",
+    title = "My Report",
+    rmd_file = "report.Rmd",
+    params = list(date = Sys.Date())
+  )
+}
+
+shinyApp(ui, server)
+```

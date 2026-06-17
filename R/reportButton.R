@@ -9,6 +9,16 @@
 #' @seealso [renderReport()]
 #'
 #' @import shiny
+#'
+#' @examples
+#' \dontrun{
+#' ui <- fluidPage(
+#'    reportButton(
+#'      inputId = "knit_report",
+#'      label = "Generate Report"
+#'    )
+#' )
+#' }
 reportButton <- function(inputId, label = "View Report", icon = NULL, ...) {
   open_window_js <- shiny::singleton(
     shiny::tags$head(
