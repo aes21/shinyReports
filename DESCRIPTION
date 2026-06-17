@@ -4,6 +4,7 @@ Version: 1.0.1
 Authors@R: 
     person("Alexander", "Sadler", , "alexander@apexomic.com", role = c("aut", "cre"))
 Description: Render R Markdown reports to HTML and display them instantly in a new browser tab from within a Shiny application. Replaces file downloads with a seamless in-browser approach.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
