@@ -6,7 +6,7 @@ Authors@R: c(
            email = "alexander@apexomic.com", 
            role = c("aut", "cre")),
     person("Kirsty", "Twigger",
-           email = "kirsty@twigger.com",
+           email = "kirsty@apexomic.com",
            role = "ctb")
     )
 Description: Render R Markdown reports to HTML and display them instantly in a new browser tab from within a Shiny application. Replaces file downloads with a seamless in-browser approach.
