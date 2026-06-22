@@ -35,7 +35,7 @@ ui <- fluidPage(
 )
 ```
 
-### 3. Served-side logic
+### 3. Server-side logic
 The `renderReport()` function contains the server-side logic to compile a `.Rmd` file and load the HTML content to the client.
 
 ```r
