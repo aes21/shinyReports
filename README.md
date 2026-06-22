@@ -52,7 +52,7 @@ server <- function(input, output, session) {
 The `params` list is passed directly through to the `.Rmd` file, so you can populate reports with reactive values from your app.
 
 ## Demo
-For an example `shinyReports` application, you can launch the demo application directly from your R console:
+For an example `shinyReports` application, you can launch the demo directly from your R console:
 
 ```r
 library(shinyReports)
