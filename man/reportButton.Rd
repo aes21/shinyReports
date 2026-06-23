@@ -16,17 +16,32 @@ you could also use any other HTML, like an image.}
 
 \item{...}{Named attributes to be applied to the button or link.}
 }
+\value{
+A \code{shiny.tag.list} object definition (from
+\code{\link[shiny]{tagList}}) containing two components:
+\itemize{
+\item A \code{\link[shiny]{singleton}} \code{<script>} tag, injected
+into the page \code{<head>}, that registers a custom 'shiny' message
+handler (\code{"openWindow"}) for opening the rendered report in a
+new browser tab/window.
+\item A \code{\link[shiny]{actionButton}} with the argument definitions
+of \code{inputId}, \code{label} and \code{icon}.
+}
+The return value should only be included under a
+\code{\link[shiny]{fluidPage}} 'shiny' definition.
+}
 \description{
-Modifies \code{\link[shiny:actionButton]{shiny::actionButton()}} to generate and open an R Markdown report in a new window tab.
+Modifies \code{\link[shiny:actionButton]{shiny::actionButton()}} to generate and open an R
+Markdown report in a new window tab.
 }
 \examples{
-\dontrun{
-ui <- fluidPage(
-   reportButton(
-     inputId = "knit_report",
-     label = "Generate Report"
-   )
-)
+if (interactive()) {
+  ui <- fluidPage(
+    reportButton(
+      inputId = "knit_report",
+      label = "Generate Report"
+    )
+  )
 }
 }
 \seealso{

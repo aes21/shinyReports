@@ -19,23 +19,33 @@ renderReport(
 
 \item{rmd_file}{The input file to be rendered (.Rmd).}
 
-\item{params}{A list of named parameters that override custom params specified within the YAML front-matter.}
+\item{params}{A list of named parameters that override custom params
+specified within the YAML front-matter.}
 
-\item{envir}{The environment in which the code chunks are to be evaluated during knitting.}
+\item{envir}{The environment in which the code chunks are to be evaluated
+during knitting.}
+}
+\value{
+No return value, called for side effects. Registers a
+\code{shiny::observeEvent} that listens for the specified \code{inputId}
+button click and renders the given \code{.Rmd} file to a temporary HTML
+file, the content of which is sent to the client via a custom 'shiny'
+message (\code{"openWindow"}) to open a new browser tab/window. If the
+render fails, a 'shiny' error notification is displayed.
 }
 \description{
 Server-side logic to compile .Rmd and send HTML to client.
 }
 \examples{
-\dontrun{
-server <- function(input, output, session) {
-   renderReport(
-     inputId = "knit_report",
-     title = "My Report",
-     rmd_file = "report.Rmd",
-     params = list(date = Sys.Date())
-   )
-}
+if (interactive()) {
+  server <- function(input, output, session) {
+    renderReport(
+      inputId = "knit_report",
+      title = "My Report",
+      rmd_file = "report.Rmd",
+      params = list(date = Sys.Date())
+    )
+  }
 }
 }
 \seealso{
