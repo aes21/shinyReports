@@ -5,7 +5,13 @@
 This package adapts the Shiny -> R Markdown report generation workflow to remove the need to download a file and open it manually. `shinyReports` provides UI and server-side elements to knit the `.Rmd` file and automatically push the HTML content to a new browser tab.
 
 ## Installation
-Install directly from GitHub with:
+Install from CRAN with:
+
+```r
+install.packages("shinyReports")
+```
+
+Or install directly from GitHub with:
 
 ```r
 # install.packages("remotes")
