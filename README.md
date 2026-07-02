@@ -1,3 +1,7 @@
+[![CRAN status](https://www.r-pkg.org/badges/version/shinyReports)](https://CRAN.R-project.org/package=shinyReports)
+[![R-CMD-check](https://github.com/aes21/shinyReports/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/aes21/shinyReports/actions/workflows/R-CMD-check.yaml)
+
+
 # shinyReports
 > Render `.Rmd` reports directly in your browser from a [shiny](https://github.com/rstudio/shiny) application - no download required.
 
